@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		28AD115127E965BB005BEF3D /* CoinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AD115027E965BB005BEF3D /* CoinData.swift */; };
 		28AD115427E9B746005BEF3D /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AD115327E9B746005BEF3D /* CoinModel.swift */; };
+		47F6A9D027EB1D960012344F /* CoinManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F6A9CF27EB1D960012344F /* CoinManagerDelegate.swift */; };
 		ADA8AC092329367100626376 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8AC082329367100626376 /* AppDelegate.swift */; };
 		ADA8AC0B2329367100626376 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8AC0A2329367100626376 /* SceneDelegate.swift */; };
 		ADA8AC0D2329367100626376 /* CoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8AC0C2329367100626376 /* CoinViewController.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		28AD115027E965BB005BEF3D /* CoinData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinData.swift; sourceTree = "<group>"; };
 		28AD115327E9B746005BEF3D /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
+		47F6A9CF27EB1D960012344F /* CoinManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinManagerDelegate.swift; sourceTree = "<group>"; };
 		ADA8AC052329367100626376 /* ByteCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ByteCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADA8AC082329367100626376 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADA8AC0A2329367100626376 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47F6A9CE27EB1D180012344F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				47F6A9CF27EB1D960012344F /* CoinManagerDelegate.swift */,
+				ADA8AC1F2329398300626376 /* CoinManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		ADA8ABFC2329367100626376 = {
 			isa = PBXGroup;
 			children = (
@@ -65,8 +76,9 @@
 				ADA8AC082329367100626376 /* AppDelegate.swift */,
 				ADA8AC0A2329367100626376 /* SceneDelegate.swift */,
 				ADA8AC1E2329370F00626376 /* Model */,
+				47F6A9CE27EB1D180012344F /* Managers */,
 				ADA8AC1D2329370700626376 /* Controller */,
-				ADA8AC1C232936FE00626376 /* View */,
+				ADA8AC1C232936FE00626376 /* Storyboard */,
 				ADA8AC112329367300626376 /* Assets.xcassets */,
 				ADA8AC132329367300626376 /* LaunchScreen.storyboard */,
 				ADA8AC162329367300626376 /* Info.plist */,
@@ -74,12 +86,12 @@
 			path = ByteCoin;
 			sourceTree = "<group>";
 		};
-		ADA8AC1C232936FE00626376 /* View */ = {
+		ADA8AC1C232936FE00626376 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
 				ADA8AC0E2329367100626376 /* Main.storyboard */,
 			);
-			path = View;
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		ADA8AC1D2329370700626376 /* Controller */ = {
@@ -93,7 +105,6 @@
 		ADA8AC1E2329370F00626376 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				ADA8AC1F2329398300626376 /* CoinManager.swift */,
 				28AD115027E965BB005BEF3D /* CoinData.swift */,
 				28AD115327E9B746005BEF3D /* CoinModel.swift */,
 			);
@@ -173,6 +184,7 @@
 			files = (
 				ADA8AC202329398300626376 /* CoinManager.swift in Sources */,
 				ADA8AC0D2329367100626376 /* CoinViewController.swift in Sources */,
+				47F6A9D027EB1D960012344F /* CoinManagerDelegate.swift in Sources */,
 				28AD115127E965BB005BEF3D /* CoinData.swift in Sources */,
 				ADA8AC092329367100626376 /* AppDelegate.swift in Sources */,
 				28AD115427E9B746005BEF3D /* CoinModel.swift in Sources */,

@@ -8,12 +8,6 @@
 
 import Foundation
 
-protocol CoinManagerDelegate {
-    func didUpdateCoin(_ coinManager: CoinManager, coinModel: CoinModel)
-    
-    func didFailWithError(error: Error)
-}
-
 struct CoinManager {
     
     let baseURL = "https://rest.coinapi.io/v1/exchangerate/BTC/"
@@ -28,14 +22,17 @@ struct CoinManager {
         if let url = URL(string: urlString){
             let session = URLSession(configuration: .default)
             
-            let task = session.dataTask(with: url) {(data, response, error) in
-                if error != nil {
-                    delegate?.didFailWithError(error: error!)
-                    return
-                }
-                if let safeData = data {
-                    if let coin = self.parseJSON(safeData) {
-                        self.delegate?.didUpdateCoin(self, coinModel: coin)
+            let task = session.dataTask(with: url) { (data, response, error) in
+                // @Sizwe, I'll explain this to you over a call
+                DispatchQueue.main.async {
+                    if error != nil {
+                        delegate?.didFailWithError(error: error!)
+                        return
+                    }
+                    if let safeData = data {
+                        if let coin = self.parseJSON(safeData) {
+                            self.delegate?.didUpdateCoin(self, coinModel: coin)
+                        }
                     }
                 }
             }
@@ -48,8 +45,7 @@ struct CoinManager {
         do {
             let decodedData = try decoder.decode(CoinData.self, from: coinData)
             let rate = decodedData.rate
-            
-            let coin = CoinModel(rate: rate, currency: decodedData.asset_id_quote)
+            let coin = CoinModel(rate: rate, currency: decodedData.assetIdQuote)
             return coin
         }catch{
             delegate?.didFailWithError(error: error)
